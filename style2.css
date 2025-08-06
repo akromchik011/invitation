@@ -1,0 +1,419 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Fleur+De+Leah&family=Grechen+Fuemen&family=Lugrasimo&family=Molle&family=Nosifer&family=Playwrite+AU+QLD:wght@100..400&family=Playwrite+HU:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Special+Elite&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+main {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+section, .hero, .countdown-container, .location-section {
+  height: 100vh;
+  scroll-snap-align: start;
+  width: 100%;
+  overflow: hidden;
+}
+
+.invite {
+  background-image: url(./Без\ названия.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #bfcde1;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.invite h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  color: #c0392b;
+  margin-bottom: 20px;
+}
+
+.invite p {
+  font-size: 20px;
+  color: #333;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(a.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  transform: scale(1);
+  animation: zoomIn 10s ease-in-out infinite;
+  z-index: -1;
+}
+
+.hero > * {
+  z-index: 1;
+}
+
+@keyframes zoomIn {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.typed {
+  font-size: 2em;
+  width: 100%;
+}
+
+.box {
+  background-image: url(./1.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.countdown-container {
+  text-align: center;
+  color: #fff;
+  padding: 100px 0;
+  height: 50vh;
+}
+
+.countdown-container h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  margin-bottom: 60px;
+}
+
+.countdown {
+  display: flex;
+  gap: 13px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background-color: #000;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  width: 90px;
+  height: 130px;
+  text-align: center;
+  perspective: 1000px;
+}
+
+.time-box span {
+  font-size: 2.5em;
+  display: inline-block;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.time-box.animate span {
+  transform: rotateX(-90deg);
+  opacity: 0;
+}
+
+.wish-section {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wish-box {
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px gray;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.wish-box h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #000;
+}
+
+.wish-input, .wish-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+  background: none;
+}
+
+.wish-input:focus, .wish-textarea:focus {
+  border-color: #15009d;
+  box-shadow: 0 0 5px rgba(122, 122, 122, 0.3);
+}
+
+.wish-textarea {
+  height: 120px;
+  resize: none;
+}
+
+.wish-btn {
+  background-color: #212121;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.wish-btn:active {
+  background-color: #ececec;
+  color: black;
+}
+
+.location-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./2.jpg);
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(8px);
+}
+
+.location-icon {
+  display: inline-block;
+  background-color: #000;
+  opacity: 0.9;
+  padding: 35px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  box-shadow: 0 8px 25px rgba(188, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 12px 30px rgba(255, 0, 0, 0.5);
+}
+
+.location-icon img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.6);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 45px rgba(255, 0, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.modal-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+#playMusicBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.text p {
+  font-family: 'Great Vibes', cursive;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  line-height: 1.2;
+  color: #222;
+  text-align: center;
+}
+
+.text {
+  margin-top: 250px;
+}
+
+.name {
+  text-align: end !important;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  font-size: 32px;
+}
+
+.title {
+  font-family: 'Fleur De Leah', cursive;
+  letter-spacing: 3px;
+  font-size: 40px;
+  font-weight: 900;
+  color: #000;
+}
+
+.title2 {
+  font-family: 'Fleur De Leah', cursive;
+  letter-spacing: 3px;
+  font-size: 35px;
+  font-weight: 900;
+  color: #000;
+}
+
+.line {
+  width: 300px;
+  margin-top: 50px;
+  height: auto;
+  position: absolute;
+  bottom: 220px;
+  text-align: center;
+  left: 15%;
+}
+
+#messageForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ... [Existing CSS remains unchanged above] ... */
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  .typed h1,h6{font-size: 52px;}
+  .invite h1 { font-size: 32px; }
+  .invite p, .text p { font-size: 16px; }
+  .title { font-size: 28px; }
+  .title2 { font-size: 24px; }
+  .line { width: 180px; bottom: 150px; left: 10%; }
+  .wish-box { padding: 20px; }
+  .wish-box h2 { font-size: 20px; }
+  .wish-input, .wish-textarea { font-size: 14px; }
+  .wish-btn { font-size: 14px; padding: 10px 20px; }
+  .location-icon { padding: 20px; }
+  .location-icon img { width: 50px; height: 50px; }
+  .countdown-container h2 { font-size: 18px; margin-bottom: 30px; }
+  .time-box { width: 70px; height: 100px; padding: 20px 15px; }
+  .time-box span { font-size: 1.8em; }
+  .text { margin-top: 150px; }
+  .name { font-size: 24px; text-align: center !important; }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .invite h1 { font-size: 36px; }
+  .invite p, .text p { font-size: 18px; }
+  .title { font-size: 34px; }
+  .title2 { font-size: 28px; }
+  .line { width: 220px; bottom: 180px; left: 12%; }
+  .wish-box h2 { font-size: 22px; }
+  .wish-btn { font-size: 15px; }
+  .time-box { width: 80px; height: 110px; }
+  .time-box span { font-size: 2em; }
+  .name { font-size: 28px; }
+}
+
+/* Extra small devices: phones smaller than 400px */
+@media (max-width: 399px) {
+  .invite{height: 100vh !important;}
+  .invite h1 { font-size: 28px; }
+  .invite p, .text p { font-size: 14px; }
+  .title { font-size: 24px; }
+  .title2 { font-size: 20px; }
+  .line { width: 150px; bottom: 130px; left: 8%; }
+  .wish-box { padding: 15px; }
+  .wish-box h2 { font-size: 18px; }
+  .wish-input, .wish-textarea { font-size: 13px; }
+  .wish-btn { font-size: 13px; padding: 8px 16px; }
+  .location-icon { padding: 16px; }
+  .location-icon img { width: 40px; height: 40px; }
+  .countdown-container h2 { font-size: 16px; margin-bottom: 20px; }
+  .time-box { width: 60px; height: 90px; padding: 15px 10px; }
+  .time-box span { font-size: 1.5em; }
+  .text { margin-top: 120px; }
+  .name { font-size: 20px; text-align: center !important; }
+}
+
+
+
+
+
+
+/* Avvaliga ogohlantirishni yashiramiz */
+.desktop-warning {
+  display: none;
+  text-align: center;
+  font-size: 18px;
+  padding: 40px;
+}
+
+/* Katta ekranlarda faqat ogohlantirish chiqadi */
+@media (min-width: 601px) {
+  main {
+    display: none;
+  }
+
+  .desktop-warning {
+    display: block;
+  }
+}
